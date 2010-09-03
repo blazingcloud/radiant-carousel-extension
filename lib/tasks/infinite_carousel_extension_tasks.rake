@@ -40,7 +40,7 @@ namespace :radiant do
         puts "Please enter the directory:"
 
         dirpath = $stdin.gets.chomp
-        target_dirpath = InfiniteCarouselExtension.root + '/public/images/infinite_carousel/'
+        target_dirpath = InfiniteCarouselExtension.root + '/public/images/'
 
         Dir.foreach(dirpath) do |entry|
           filepath = dirpath + entry
