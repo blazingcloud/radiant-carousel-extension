@@ -490,11 +490,16 @@
 
                     $('li:lt(' + dist + ')', obj).clone(true).insertAfter($('li:last', obj)); // Copy the first image (offscreen to the left) to the end of the list (offscreen to the right)
                     $('li:lt(' + dist + ')', obj).remove();
-                    o.onSlideStart.call(this, viewable, 'left');
 
-                    $('ul', obj).animate({left:-(imgWidth * (dist + 1) - (parseInt(o.padding)))}, o.transitionSpeed, o.easeLeft, function() { // Animate the entire list to the left
+                    o.onSlideStart.call(this, viewable, 'left');
+                    //This sucks BUT we need to move the ul to zero (back to the right from a negative value) because we remove the item from the front of the
+                    //list and append it to the back which puts the element in the correct spot. So no animation actually happens unless we move the list
+                    //to the right first and animate left.
+                    $('ul', obj).css({'left':'0'});
+                    $('ul', obj).animate({'left':-(imgWidth - (parseInt(o.padding)))}, o.transitionSpeed, o.easeLeft, function() { // Animate the entire list to the left
                          // When the animation finishes, remove the first image (on the left). It has already been copied to the end of the list (right)
-                        $(this).css({'left':-(imgWidth - parseInt(o.padding))});
+
+                        $(this).css({'left':-(imgWidth - (parseInt(o.padding)))});
                         if (o.displayProgressBar && autopilot) startProgressBar();
                         postMove();
                         if (o.displayTime == 0) {
