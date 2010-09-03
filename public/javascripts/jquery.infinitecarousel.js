@@ -37,6 +37,7 @@
                 autoStart: true,
                 prevNextInternal: true,
                 enableKeyboardNav: true,
+                enableArrowAnimation: true,  //the caption's textbox left and right arrows will flash on carousel transitions
                 onSlideStart: function() {
                 },
                 onSlideEnd: function() {
@@ -296,13 +297,6 @@
                         $(this).animate({opacity:'.5'}, 250)
                     });
 
-                    //                    //for each image in view show the caption view controls
-                    //                    for(i = 1; i <= o.inView; i++) {
-                    //                        //min, max and close button appearing on the captions view
-                    //                        $('#minmax' + randID + '_' + i).show();
-                    //                        $('#close' + randID + '_' + i).show();
-                    //                    }
-
                     if (o.autoHideControls && o.prevNextInternal)
                     {
                         function showcontrols()
@@ -441,9 +435,12 @@
                     // Fade out play/pause/left/right
                     if (o.showControls && o.prevNextInternal)
                     {
+                        if (o.enableArrowAnimation) {
+                            $('#btn_lt' + randID).fadeOut(200);
+                            $('#btn_rt' + randID).fadeOut(200);
+                        }
+
                         $('#play_pause_btn' + randID).fadeOut(200);
-                        $('#btn_lt' + randID).fadeOut(200);
-                        $('#btn_rt' + randID).fadeOut(200);
                         $('.minmax', obj).fadeOut(200);
                         $('.close', obj).fadeOut(200);
 
@@ -455,9 +452,12 @@
                 {
                     if (o.showControls && o.prevNextInternal)
                     {
+                        if (o.enableArrowAnimation) {
+                            $('#btn_lt' + randID).fadeIn(200);
+                            $('#btn_rt' + randID).fadeIn(200);
+                        }
+
                         $('#play_pause_btn' + randID).fadeIn(200);
-                        $('#btn_lt' + randID).fadeIn(200);
-                        $('#btn_rt' + randID).fadeIn(200);
                         $('.minmax', obj).fadeIn(200);
                         $('.close', obj).fadeIn(200);
                     }
