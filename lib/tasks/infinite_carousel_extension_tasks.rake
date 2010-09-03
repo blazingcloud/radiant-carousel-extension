@@ -14,9 +14,9 @@ namespace :radiant do
       task :migrate => :environment do
         require 'radiant/extension_migrator'
         if ENV["VERSION"]
-          CarouselExtension.migrator.migrate(ENV["VERSION"].to_i)
+          InfiniteCarouselExtension.migrator.migrate(ENV["VERSION"].to_i)
         else
-          CarouselExtension.migrator.migrate
+          InfiniteCarouselExtension.migrator.migrate
         end
       end
       
@@ -24,8 +24,8 @@ namespace :radiant do
       task :update => :environment do
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
         puts "Copying assets from InfiniteCarouselExtension.rb"
-        Dir[CarouselExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|
-          path = file.sub(CarouselExtension.root, '')
+        Dir[InfiniteCarouselExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|
+          path = file.sub(InfiniteCarouselExtension.root, '')
           directory = File.dirname(path)
           mkdir_p RAILS_ROOT + directory, :verbose => false
           cp file, RAILS_ROOT + path, :verbose => false
@@ -40,7 +40,7 @@ namespace :radiant do
         puts "Please enter the directory:"
 
         dirpath = $stdin.gets.chomp
-        target_dirpath = CarouselExtension.root + '/public/images/carousel/'
+        target_dirpath = InfiniteCarouselExtension.root + '/public/images/carousel/'
 
         Dir.foreach(dirpath) do |entry|
           filepath = dirpath + entry
