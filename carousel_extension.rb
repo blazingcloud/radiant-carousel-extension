@@ -3,7 +3,7 @@
  # @license MIT License
  #
 class CarouselExtension < Radiant::Extension
-  version "1.0"
+  version "1.1"
   description "A rotating banner based on Infinite Carousel"
   url "http://blazingcloud.net"
   
