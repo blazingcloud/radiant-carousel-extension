@@ -8,18 +8,18 @@ To Install
 git clone git@github.com:blazingcloud/radiant-carousel-extension.git
 
 2. OPTIONAL: You can copy images to a radiant public image directory by typing, in your Radiant root:
-rake radiant:extensions:carousel:copy_images
+rake radiant:extensions:infinite_carousel:copy_images
 Or, you can use MediaMaid to get links to your images. 
 Or, you can hand-code in the links to your images.
 
 3. (back to required steps) In your radiant root directory, enter:
-rake radiant:extensions:carousel:update
+rake radiant:extensions:infinite_carousel:update
 
 4. In the Radiant Admin UI interface, use the following tags:
-<r:carousel>
-<r:carousel_image src="[path to image, i.e. http://localhost/images/1.jpg]" caption="The image" />
+<r:infinite_carousel>
+<r:infinite_carousel_image src="[path to image, i.e. http://localhost/images/1.jpg]" caption="The image" />
 ... iterate through as many carousel images as you want.
-</r:carousel>
+</r:infinite_carousel>
 
 5. Lastly, make sure the pages that carry the carousel have a layout, that includes the following links in the header (in this order):
 <script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>

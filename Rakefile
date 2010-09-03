@@ -102,7 +102,7 @@ namespace :spec do
   end
 end
 
-desc 'Generate documentation for the carousel2 extension.'
+desc 'Generate documentation for the infinite_carousel extension.'
 Rake::RDocTask.new(:rdoc) do |rdoc|
   rdoc.rdoc_dir = 'rdoc'
   rdoc.title    = 'Carousel2Extension'
@@ -112,7 +112,7 @@ Rake::RDocTask.new(:rdoc) do |rdoc|
 end
 
 # For extensions that are in transition
-desc 'Test the carousel2 extension.'
+desc 'Test the infinite_carousel extension.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.pattern = 'test/**/*_test.rb'

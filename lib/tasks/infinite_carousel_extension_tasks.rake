@@ -8,7 +8,7 @@
 
 namespace :radiant do
   namespace :extensions do
-    namespace :carousel do
+    namespace :infinite_carousel do
       
       desc "Runs the migration of the Carousel extension"
       task :migrate => :environment do
@@ -23,7 +23,7 @@ namespace :radiant do
       desc "Copies public assets of the Carousel to the instance public/ directory."
       task :update => :environment do
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
-        puts "Copying assets from CarouselExtension"
+        puts "Copying assets from InfiniteCarouselExtension.rb"
         Dir[CarouselExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|
           path = file.sub(CarouselExtension.root, '')
           directory = File.dirname(path)
