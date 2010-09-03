@@ -1,5 +1,5 @@
  # Radiant-carousel-extension
- # @version 1.1
+ # @version 2.0
  # @date September, 2010
  # @category Radiant Extension
  # @copyright (c) 2010 Blazing CLoud (http://www.blazingcloud.net)

@@ -278,8 +278,8 @@
 
                     // Prev/next button(img)
                     arrowsTop = ((imgHeight / 2) - 15) + parseInt(o.padding);
-                    html = '<div id="btn_rt' + randID + '" style="position:absolute;right:210px;bottom:20px"><a href="javascript:void(0);"><img style="border:none;margin-right:2px" src="images/rt.png" /></a></div>';
-                    html += '<div id="btn_lt' + randID + '" style="position:absolute;left:210px;bottom:20px"><a href="javascript:void(0);"><img style="border:none;margin-left:2px" src="images/lt.png" /></a></div>';
+                    html = '<div id="btn_rt' + randID + '" style="position:absolute;right:210px;bottom:20px;height:30px;width:13px;"><a href="javascript:void(0);"><img style="border:none;margin-right:2px" src="images/rt.png" /></a></div>';
+                    html += '<div id="btn_lt' + randID + '" style="position:absolute;left:210px;bottom:20px;height:30px;width:13px;"><a href="javascript:void(0);"><img style="border:none;margin-left:2px" src="images/lt.png" /></a></div>';
                     (o.prevNextInternal) ? $(obj).append(html) : $('#' + wrapID).append(html);
 
                     $('#btn_rt' + randID).css('opacity', .5).click(function() {
