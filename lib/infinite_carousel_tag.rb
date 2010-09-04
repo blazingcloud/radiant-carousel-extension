@@ -6,7 +6,7 @@
   
   desc "Contains the panels of the carousel, and other objects."
   tag 'infinite_carousel' do |tag|
-    content = '<div id="headerCarousel"><ul>'
+    content = '<div id="infinite_carousel"><ul>'
     content << tag.expand
     content << '</ul></div>'
   end
