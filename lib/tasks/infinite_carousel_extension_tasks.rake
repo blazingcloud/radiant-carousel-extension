@@ -24,7 +24,9 @@ namespace :radiant do
       task :update => :environment do
         require 'git'
 
-        g = Git.open (working_dir = '.')
+        dir = Dir.getwd + "/vendor/extensions/infinite_carousel/"
+        g = Git.open (working_dir=dir)
+        puts g.inspect
         g.pull
          
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
