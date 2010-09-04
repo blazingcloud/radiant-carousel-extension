@@ -21,7 +21,7 @@ rake radiant:extensions:infinite_carousel:update
 ... iterate through as many carousel images as you want.
 </r:infinite_carousel>
 
-5. Lastly, make sure the pages that carry the carousel have a layout, that includes the following links in the header (in this order):
+5. Make sure the pages that carry the carousel have a layout, that includes the following links in the header (in this order):
 <script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="javascript/jquery.infinitecarousel2.js"></script>
 
@@ -38,3 +38,24 @@ rake radiant:extensions:infinite_carousel:update
         });
     });
 </script>
+
+6. Lastly, ou must include css that gives your images height and width or this plugin will not work in webkit based browsers (safari/chrome/etc...)
+<style type="text/css">
+
+   //this is for webkit based browsers
+   #infinite_carousel ul li img {
+      width:500px;
+      height:325px;
+   }
+
+   //do this for firefox - it will center the image in the page while it loads
+   #infinite_carousel > ul {
+      left: 200px;
+      list-style: none outside none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      width: 9999px;
+      height:325px;
+   }
+</style>

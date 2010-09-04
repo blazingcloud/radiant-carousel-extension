@@ -14,8 +14,8 @@
   desc "Prints out the individual panels of the carousel."
   tag 'infinite_carousel_image' do |tag|
     %{ <li><a href="#{tag.attr['link']}">
-      <img src=" #{tag.attr['src']}"></a>
-      <p>#{tag.attr['caption']}</p>
+      <img src=" #{tag.attr['src']}"/></a>
+      <p>#{tag.attr['caption']}</p></li>
     }
     
   end  

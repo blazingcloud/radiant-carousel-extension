@@ -20,8 +20,13 @@ namespace :radiant do
         end
       end
       
-      desc "Copies public assets of the Carousel to the instance public/ directory."
+      desc "update radient extension from git."
       task :update => :environment do
+        require 'git'
+
+        g = Git.open (working_dir = '.')
+        g.pull
+         
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
         puts "Copying assets from InfiniteCarouselExtension.rb"
         Dir[InfiniteCarouselExtension.root + "/public/**/*"].reject(&is_svn_or_dir).each do |file|

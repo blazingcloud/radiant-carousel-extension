@@ -84,8 +84,8 @@
                 }
 
                 //build overlay div that is 200 px wide, 100% of height of the carousel, and append to both sides.
-                html = '<div id="overlayLeft" style="background-color:#333; height:325px;position:absolute;left:0px;" onclick="javascript:void(0);"></div>';
-                html += '<div id="overlayRight" style="background-color:#333; height:325px;position:absolute;right:0px;" onclick="javascript:void(0);"></div>';
+                html = '<div id="overlayLeft" style="background-color:#333; height:325px;position:absolute;left:0px;;top:0px;" onclick="javascript:void(0);"></div>';
+                html += '<div id="overlayRight" style="background-color:#333; height:325px;position:absolute;right:0px;top:0px;" onclick="javascript:void(0);"></div>';
                 $(obj).append(html);
 
                 $('#overlayLeft').width(o.padding);
