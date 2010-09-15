@@ -5,7 +5,7 @@ By Blazing Cloud, Inc (http://www.blazingcloud.net)
 
 To Install
 1. In your vendor/extensions directory, enter:
-git clone git@github.com:blazingcloud/radiant-carousel-extension.git
+git clone git@github.com:blazingcloud/radiant-carousel-extension.git infinite_carousel
 
 2. OPTIONAL: You can copy images to a radiant public image directory by typing, in your Radiant root:
 rake radiant:extensions:infinite_carousel:copy_images

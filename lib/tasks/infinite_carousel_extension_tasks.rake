@@ -22,12 +22,6 @@ namespace :radiant do
       
       desc "update radient extension from git."
       task :update => :environment do
-        require 'git'
-
-        dir = Dir.getwd + "/vendor/extensions/infinite_carousel/"
-        g = Git.open (working_dir=dir)
-        puts g.inspect
-        g.pull
          
         is_svn_or_dir = proc {|path| path =~ /\.svn/ || File.directory?(path) }
         puts "Copying assets from InfiniteCarouselExtension.rb"
