@@ -17,17 +17,17 @@ rake radiant:extensions:infinite_carousel:update
 
 4. In the Radiant Admin UI interface, use the following tags:
 <r:infinite_carousel>
-<r:infinite_carousel_image src="[path to image, i.e. http://localhost/images/1.jpg]" caption="The image" />
+<r:infinite_carousel_image src="/images/infinite_carousel/1.jpg" caption="The image" />
 ... iterate through as many carousel images as you want.
 </r:infinite_carousel>
 
 5. Make sure the pages that carry the carousel have a layout, that includes the following links in the header (in this order):
-<script type="text/javascript" src="javascript/jquery-1.4.2.min.js"></script>
-<script type="text/javascript" src="javascript/jquery.infinitecarousel2.js"></script>
+<script type="text/javascript" src="/javascripts/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="/javascripts/jquery.infinitecarousel2.js"></script>
 
 <script type="text/javascript">
     $(function(){
-        $('#carousel').infiniteCarousel({
+        $('#infinite_carousel').infiniteCarousel({
             /****   Override defaults here  ****
              * transitionSpeed : 250,//how fast the slides move
              * displayTime : 6000, //how long before the slides move
